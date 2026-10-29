@@ -10,7 +10,7 @@
   "introTitle": "Your ambitions. Our starting point.",
   "introText": "A place to call home. A new chapter. A considered investment. Whatever brings you to the UAE, start with a conversation about what matters to you.",
   "aboutTitle": "An engineer’s eye. A personal approach.",
-  "aboutText": "I’m Mayur, a civil engineer turned property consultant. I bring a practical eye for space, construction and everyday living to the property conversation, helping you ask better questions and make a more considered choice.",
+  "aboutText": "I’m Mayur Janardan Mondkar, a civil engineer turned property consultant. I bring a practical eye for space, construction and everyday living to the property conversation, helping you ask better questions and make a more considered choice.",
   "services": [
     {
       "name": "Buy",
@@ -164,5 +164,11 @@
       "symbol": "▶",
       "action": "Watch / subscribe"
     }
-  ]
+  ],
+  "advisor": {
+    "name": "Mayur Janardan Mondkar",
+    "profession": "Civil Engineer turned Property Consultant",
+    "specialty": "UAE Luxury Real Estate",
+    "services": "Buy | Sell | Rent | Mortgage | Invest"
+  }
 }
