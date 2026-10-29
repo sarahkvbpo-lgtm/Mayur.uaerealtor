@@ -12,24 +12,111 @@
   "aboutTitle": "An engineer’s eye. A personal approach.",
   "aboutText": "I’m Mayur, a civil engineer turned property consultant. I bring a practical eye for space, construction and everyday living to the property conversation, helping you ask better questions and make a more considered choice.",
   "services": [
-    { "name": "Buy", "title": "A home that feels like you.", "text": "Shape a shortlist around your lifestyle, priorities and budget, with support from discovery to the next step.", "action": "Find a home", "icon": "home" },
-    { "name": "Sell", "title": "Make your next move.", "text": "Discuss your property, positioning and sale priorities, then build a clear plan to reach the right buyers.", "action": "Discuss my property", "icon": "key" },
-    { "name": "Rent", "title": "Settle into something special.", "text": "Explore locations and homes that work for your commute, your routine and the way you want to live.", "action": "Find a rental", "icon": "building" },
-    { "name": "Mortgage", "title": "See the bigger picture.", "text": "Start a financing conversation, organise your questions and discuss connecting with appropriate licensed specialists.", "action": "Explore my options", "icon": "landmark" },
-    { "name": "Invest", "title": "Clarity before commitment.", "text": "Compare property types, locations and ownership costs against your objectives and time horizon.", "action": "Plan my investment", "icon": "chart" }
+    {
+      "name": "Buy",
+      "title": "A home that feels like you.",
+      "text": "Shape a shortlist around your lifestyle, priorities and budget, with support from discovery to the next step.",
+      "action": "Find a home",
+      "icon": "home"
+    },
+    {
+      "name": "Sell",
+      "title": "Make your next move.",
+      "text": "Discuss your property, positioning and sale priorities, then build a clear plan to reach the right buyers.",
+      "action": "Discuss my property",
+      "icon": "key"
+    },
+    {
+      "name": "Rent",
+      "title": "Settle into something special.",
+      "text": "Explore locations and homes that work for your commute, your routine and the way you want to live.",
+      "action": "Find a rental",
+      "icon": "building"
+    },
+    {
+      "name": "Mortgage",
+      "title": "See the bigger picture.",
+      "text": "Start a financing conversation, organise your questions and discuss connecting with appropriate licensed specialists.",
+      "action": "Explore my options",
+      "icon": "landmark"
+    },
+    {
+      "name": "Invest",
+      "title": "Clarity before commitment.",
+      "text": "Compare property types, locations and ownership costs against your objectives and time horizon.",
+      "action": "Plan my investment",
+      "icon": "chart"
+    }
   ],
   "areas": [
-    { "name": "Downtown Dubai", "eyebrow": "THE CITY AT YOUR DOORSTEP", "text": "Iconic architecture. Connected city living.", "image": "/images/dubai-skyline.jpg", "alt": "Downtown Dubai skyline with the Burj Khalifa at sunset" },
-    { "name": "Jumeirah coast", "eyebrow": "A DIFFERENT PACE OF LIFE", "text": "Sea air. Open horizons. Coastal living.", "image": "/images/jumeirah-coast.jpg", "alt": "Aerial view of Dubai’s Jumeirah coastline and the Burj Al Arab" }
+    {
+      "name": "Downtown Dubai",
+      "eyebrow": "THE CITY AT YOUR DOORSTEP",
+      "text": "Iconic architecture. Connected city living.",
+      "image": "/images/dubai-skyline.jpg",
+      "alt": "Downtown Dubai skyline with the Burj Khalifa at sunset"
+    },
+    {
+      "name": "Jumeirah coast",
+      "eyebrow": "A DIFFERENT PACE OF LIFE",
+      "text": "Sea air. Open horizons. Coastal living.",
+      "image": "/images/jumeirah-coast.jpg",
+      "alt": "Aerial view of Dubai’s Jumeirah coastline and the Burj Al Arab"
+    }
   ],
-  "locations": ["Open to suggestions", "Downtown Dubai", "Jumeirah coast", "Dubai Marina", "Palm Jumeirah", "Dubai Hills Estate", "Business Bay", "Abu Dhabi", "Elsewhere in the UAE"],
-  "propertyTypes": ["Open to suggestions", "Apartment", "Villa", "Townhouse", "Penthouse", "Commercial property"],
-  "buyBudgets": ["Let’s discuss", "Under AED 1 million", "AED 1–3 million", "AED 3–5 million", "AED 5–10 million", "AED 10 million+"],
-  "rentBudgets": ["Let’s discuss", "Under AED 100,000 / year", "AED 100,000–200,000 / year", "AED 200,000–350,000 / year", "AED 350,000+ / year"],
+  "locations": [
+    "Open to suggestions",
+    "Downtown Dubai",
+    "Jumeirah coast",
+    "Dubai Marina",
+    "Palm Jumeirah",
+    "Dubai Hills Estate",
+    "Business Bay",
+    "Abu Dhabi",
+    "Elsewhere in the UAE"
+  ],
+  "propertyTypes": [
+    "Open to suggestions",
+    "Apartment",
+    "Villa",
+    "Townhouse",
+    "Penthouse",
+    "Commercial property"
+  ],
+  "buyBudgets": [
+    "Let’s discuss",
+    "Under AED 1 million",
+    "AED 1–3 million",
+    "AED 3–5 million",
+    "AED 5–10 million",
+    "AED 10 million+"
+  ],
+  "rentBudgets": [
+    "Let’s discuss",
+    "Under AED 100,000 / year",
+    "AED 100,000–200,000 / year",
+    "AED 200,000–350,000 / year",
+    "AED 350,000+ / year"
+  ],
   "faqs": [
-    { "question": "I’m just starting to explore. Can I still enquire?", "answer": "Of course. Share what you know so far, even if you’re still deciding on a location or budget. The first conversation helps clarify your priorities." },
-    { "question": "Can you help with more than buying a property?", "answer": "Yes. You can enquire about selling, renting, investing or starting a mortgage conversation. Select your goal in the enquiry form so the conversation starts in the right place." },
-    { "question": "Are the images on this website available properties?", "answer": "The photographs introduce locations and a style of living. They are not advertised property listings. Share your requirements to discuss suitable options and confirm availability." },
-    { "question": "What happens after I send an enquiry?", "answer": "Your details and preferences are saved securely with a reference number for Mayur to review. Your contact information is used to respond to your enquiry. Response timing is not guaranteed." }
-  ]
+    {
+      "question": "I’m just starting to explore. Can I still enquire?",
+      "answer": "Of course. Share what you know so far, even if you’re still deciding on a location or budget. The first conversation helps clarify your priorities."
+    },
+    {
+      "question": "Can you help with more than buying a property?",
+      "answer": "Yes. You can enquire about selling, renting, investing or starting a mortgage conversation. Select your goal in the enquiry form so the conversation starts in the right place."
+    },
+    {
+      "question": "Are the images on this website available properties?",
+      "answer": "The photographs introduce locations and a style of living. They are not advertised property listings. Share your requirements to discuss suitable options and confirm availability."
+    },
+    {
+      "question": "How do I send an enquiry?",
+      "answer": "Complete the form and review your details, then choose Open email app. An email addressed to connect2realtor.56@gmail.com is prepared with your contact details and property preferences. Tap Send in your email app to complete your enquiry. You can also call Mayur on +971 58 567 2791."
+    }
+  ],
+  "phoneNumber": "+971585672791",
+  "phoneDisplay": "+971 58 567 2791",
+  "contactEmail": "connect2realtor.56@gmail.com"
 }

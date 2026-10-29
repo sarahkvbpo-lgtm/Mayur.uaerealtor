@@ -13,9 +13,11 @@ Page layout and interactions: `app/page.tsx`. Colours and spacing: `app/globals.
 
 ## Enquiries
 
-The three-step form validates details, asks for enquiry-specific consent, shows a review, and sends to `/api/enquiries`. Valid submissions are stored in the Site's D1 `enquiries` table; stable request IDs prevent duplicate retry submissions. Success is shown only after the database acknowledges the write. Errors retain the form so it can be retried. There is no public endpoint for reading leads.
+The three-step form validates contact details, asks for enquiry-specific consent, and shows a review. **Open email app** is a native `mailto:` link addressed to **connect2realtor.56@gmail.com**, with the complete enquiry in its subject and body. The visitor must tap **Send** in their email app. The website never claims an email has been sent or automatically sends mail. A copyable subject and message are available if no email app is configured.
 
-Read enquiries through **Sites → this Site → Settings → Database → enquiries**, or ask ChatGPT to read this Site's enquiry records. The private preview is limited to its owner. Email notifications and WhatsApp delivery are not configured; the site makes no delivery or response-time promise. Add verified business contact details and any required business disclosures before approving a public launch.
+Call Now actions in the header, hero, contact section and mobile contact bar use `tel:+971585672791`. The footer displays both the phone number and email address. These details can be changed in `content/site.json`.
+
+New enquiries use the visitor’s email app, with no database submission. The previous D1 table and migration history are retained for historical records; its former submission API has been removed. Historical records can be reviewed through the Site's Settings → Database → enquiries. No public lead-reading endpoint is exposed.
 
 ## Development
 
@@ -35,4 +37,4 @@ Photos: Unsplash image IDs `photo-1512453979798-5ea266f8880c` (Dubai skyline), `
 
 ## Verification
 
-Desktop navigation and a complete Sell enquiry were tested in the browser. At a 390px frame width, the mobile menu, section navigation, rental preference transfer, phone validation, privacy dialog and a complete Rent enquiry passed. Both saved records were verified in the local database. The production build, strict TypeScript check and whitespace check passed. No real client data was used for QA.
+Initial validation covered desktop and 390px mobile navigation and enquiries. The updated contact flow passed checks for the correct telephone URI, email recipient and encoded enquiry fields, required contact validation, rental preference transfer, and mobile layout. The native email handoff preserved the page and exposed the copy-details fallback in the browser. Strict TypeScript, production build and whitespace checks pass. No phone call was made and no email was sent during testing.

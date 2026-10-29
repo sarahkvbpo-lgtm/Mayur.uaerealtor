@@ -2,7 +2,6 @@ import { z } from "zod";
 import site from "../content/site.json";
 
 export const enquirySchema = z.object({
-  id: z.string().uuid(),
   service: z.enum(["Buy", "Sell", "Rent", "Mortgage", "Invest"]),
   location: z.string().refine(v => site.locations.includes(v), "Choose a location."),
   propertyType: z.string().refine(v => site.propertyTypes.includes(v), "Choose a property type."),
