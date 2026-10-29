@@ -77,7 +77,10 @@
   ],
   "propertyTypes": [
     "Open to suggestions",
-    "Apartment",
+    "Studio Apartment",
+    "1 BR Apartment",
+    "2 BR Apartment",
+    "3 BR Apartment",
     "Villa",
     "Townhouse",
     "Penthouse",
