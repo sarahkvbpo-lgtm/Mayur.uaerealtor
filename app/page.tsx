@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from "react";
-import { ArrowUpRight, ArrowRight, Check, X, Menu, MapPin, Home, KeyRound, Building2, Landmark, ChartNoAxesCombined, ShieldCheck, Plus, Minus, Phone, Mail } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check, X, Menu, MapPin, Home, KeyRound, Building2, Landmark, ChartNoAxesCombined, ShieldCheck, Plus, Minus, Phone, Mail, Copy } from "lucide-react";
 import site from "../content/site.json";
 import { enquirySchema } from "../lib/enquiry-validation";
 import { buildEnquiryEmail } from "../lib/enquiry-email";
@@ -24,20 +24,45 @@ export default function Page() {
   const [emailReady, setEmailReady] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showCall, setShowCall] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const dialog = useRef<HTMLDialogElement>(null);
   const privacy = useRef<HTMLDialogElement>(null);
+  const callDialog = useRef<HTMLDialogElement>(null);
+  const callHeading = useRef<HTMLHeadingElement>(null);
+  const phoneInput = useRef<HTMLInputElement>(null);
+  const callTrigger = useRef<HTMLElement | null>(null);
   const priorFocus = useRef<HTMLElement | null>(null);
   const stepHeading = useRef<HTMLHeadingElement>(null);
   const patch = (values: Partial<Lead>) => setLead(prev => ({...prev, ...values}));
 
   useEffect(() => {
-    if (!showContact && !showPrivacy) return;
+    if (!showContact && !showPrivacy && !showCall) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {document.body.style.overflow = prev;};
-  }, [showContact, showPrivacy]);
+  }, [showContact, showPrivacy, showCall]);
   useEffect(() => { if (showContact) stepHeading.current?.focus(); }, [step, emailReady, showContact]);
+
+  function openCall() {
+    callTrigger.current = document.activeElement as HTMLElement;
+    setCopyStatus(""); setShowCall(true); setMenu(false);
+    callDialog.current?.showModal(); callHeading.current?.focus();
+  }
+  function closeCall() {
+    callDialog.current?.close(); setShowCall(false); callTrigger.current?.focus();
+  }
+  async function copyPhone() {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(site.phoneNumber);
+      setCopyStatus("Number copied. Paste it into your Phone app.");
+    } catch {
+      phoneInput.current?.focus(); phoneInput.current?.select();
+      setCopyStatus("Number selected. Press and hold, or use your device’s Copy option.");
+    }
+  }
 
   function enquire(service: Service = "Buy", location = site.locations[0], fromSearch = false) {
     priorFocus.current = document.activeElement as HTMLElement;
@@ -77,7 +102,7 @@ export default function Page() {
         <a className="brand" href="#home" aria-label="Mayur UAE Realtor home" onClick={() => setMenu(false)}><span className="monogram">M</span><span><strong>{site.brand}</strong><small>{site.brandDescriptor}</small></span></a>
         <nav id="mobile-navigation" className={menu ? "main-nav is-open" : "main-nav"} aria-label="Main navigation">
           {[["Services", "services"], ["Neighbourhoods", "neighbourhoods"], ["The approach", "approach"], ["Meet Mayur", "about"]].map(([title, id]) => <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>{title}</a>)}
-          <a className="button nav-contact" href={`tel:${site.phoneNumber}`} aria-label={`Call Now: ${site.phoneDisplay}`}><Phone size={16} aria-hidden="true" /> Call Now</a>
+          <button type="button" className="button nav-contact"  aria-label={`Call Now: ${site.phoneDisplay}`} aria-haspopup="dialog" onClick={openCall}><Phone size={16} aria-hidden="true" /> Call Now</button>
         </nav>
         <button className="menu-toggle" aria-expanded={menu} aria-controls="mobile-navigation" aria-label={menu ? "Close navigation" : "Open navigation"} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</button>
       </div>
@@ -90,7 +115,7 @@ export default function Page() {
           <div className="hero-topline"><span className="eyebrow light">{site.heroEyebrow}</span><span className="hero-location"><MapPin size={14} /> DUBAI · UNITED ARAB EMIRATES</span></div>
           <h1>{site.heroTitle}<br /><em>{site.heroEmphasis}</em></h1>
           <p>{site.heroDescription}</p>
-          <div className="hero-actions"><a className="button button-gold" href={`tel:${site.phoneNumber}`} aria-label={`Call Now: ${site.phoneDisplay}`}><Phone size={16} aria-hidden="true" /> Call Now</a><button className="hero-enquire" onClick={() => enquire()}>Send an enquiry <Arrow /></button></div>
+          <div className="hero-actions"><button type="button" className="button button-gold"  aria-label={`Call Now: ${site.phoneDisplay}`} aria-haspopup="dialog" onClick={openCall}><Phone size={16} aria-hidden="true" /> Call Now</button><button className="hero-enquire" onClick={() => enquire()}>Send an enquiry <Arrow /></button></div>
           <a className="hero-explore" href="#neighbourhoods">A city of possibilities <span>Explore the neighbourhoods <ArrowRight size={16} /></span></a>
         </div>
       </section>
@@ -118,10 +143,10 @@ export default function Page() {
       <section className="section container approach" id="approach"><div className="approach-heading"><span className="eyebrow">LESS OVERWHELM. MORE DIRECTION.</span><h2>A clear path.<br /><em>A personal journey.</em></h2><p>Considered decisions begin with understanding. Here’s how we start.</p><button className="button" onClick={() => enquire()}>Start a conversation <Arrow /></button></div><ol className="steps"><li><span>01</span><div><h3>First, we listen.</h3><p>Your lifestyle, your objectives, your non-negotiables. The right questions come before the right property.</p></div></li><li><span>02</span><div><h3>Then, we bring focus.</h3><p>Compare locations and property options against your priorities, with the details made easier to understand.</p></div></li><li><span>03</span><div><h3>Move forward with clarity.</h3><p>Discuss viewings, practical questions and the next steps, at a pace that works for you.</p></div></li></ol></section>
       <section className="about-section" id="about"><div className="container about-grid"><div className="about-image"><img src="/images/architecture.jpg" alt="Contemporary residential architecture with clean lines, a garden and a pool; lifestyle inspiration" loading="lazy" /><div className="image-label">A considered eye for the places we call home.</div></div><div className="about-copy"><span className="eyebrow">MEET YOUR PROPERTY CONSULTANT</span><h2>{site.aboutTitle}</h2><p>{site.aboutText}</p><p>Good advice starts with trust. Expect a conversation focused on your needs, thoughtful comparisons and a clear view of what comes next.</p><div className="signature">Mayur</div><div className="about-caption">{site.tagline}</div><button className="text-link" onClick={() => enquire()}>Let’s talk about your plans <Arrow /></button></div></div></section>
       <section className="section container faq-section"><div><span className="eyebrow">A LITTLE MORE CLARITY</span><h2>Before we begin.</h2></div><div className="faqs">{site.faqs.map((faq, i) => <div className="faq" key={faq.question}><h3><button aria-expanded={openFaq === i} aria-controls={`faq-${i}`} onClick={() => setOpenFaq(openFaq === i ? null : i)}>{faq.question}{openFaq === i ? <Minus size={18} /> : <Plus size={18} />}</button></h3><div id={`faq-${i}`} hidden={openFaq !== i}><p>{faq.answer}</p></div></div>)}</div></section>
-      <section className="contact-section" id="contact"><div className="container contact-inner"><div><span className="eyebrow light">YOUR NEXT CHAPTER STARTS WITH A CONVERSATION</span><h2>Let’s make room<br /><em>for what’s next.</em></h2><p>Tell me what you have in mind. We’ll take it from there.</p></div><div className="contact-actions"><a className="button button-gold" href={`tel:${site.phoneNumber}`} aria-label={`Call Now: ${site.phoneDisplay}`}><Phone size={17} aria-hidden="true" /> Call Now</a><a className="contact-phone" href={`tel:${site.phoneNumber}`}>{site.phoneDisplay}</a><button className="contact-enquire" onClick={() => enquire()}>Send an enquiry <Arrow /></button></div></div></section>
+      <section className="contact-section" id="contact"><div className="container contact-inner"><div><span className="eyebrow light">YOUR NEXT CHAPTER STARTS WITH A CONVERSATION</span><h2>Let’s make room<br /><em>for what’s next.</em></h2><p>Tell me what you have in mind. We’ll take it from there.</p></div><div className="contact-actions"><button type="button" className="button button-gold"  aria-label={`Call Now: ${site.phoneDisplay}`} aria-haspopup="dialog" onClick={openCall}><Phone size={17} aria-hidden="true" /> Call Now</button><button type="button" className="contact-phone phone-link"  aria-haspopup="dialog" onClick={openCall}>{site.phoneDisplay}</button><button className="contact-enquire" onClick={() => enquire()}>Send an enquiry <Arrow /></button></div></div></section>
     </main>
-    <footer><div className="container"><div className="footer-main"><a className="brand" href="#home"><span className="monogram">M</span><span><strong>{site.brand}</strong><small>{site.brandDescriptor}</small></span></a><p>Personal guidance.<br />Extraordinary possibilities.</p><nav aria-label="Footer services">{site.services.map(s => <button key={s.name} onClick={() => enquire(s.name as Service)}>{s.name}</button>)}</nav></div><div className="footer-contact"><a href={`tel:${site.phoneNumber}`}><Phone size={15} aria-hidden="true" />{site.phoneDisplay}</a><a href={`mailto:${site.contactEmail}`} target="_blank" rel="noopener noreferrer"><Mail size={15} aria-hidden="true" />{site.contactEmail}</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Mayur UAE Realtor</span><span>Dubai · United Arab Emirates</span><button onClick={privacyOpen}>Privacy & enquiries</button><a href="#home">Back to top ↑</a></div><p className="footer-note">Mortgage terms and eligibility depend on the lender. Property availability and transaction details are confirmed individually. Investment outcomes are not guaranteed.</p></div></footer>
-    <div className="mobile-cta"><span>Speak with Mayur<br /><a href={`tel:${site.phoneNumber}`}><strong>{site.phoneDisplay}</strong></a></span><a className="button" href={`tel:${site.phoneNumber}`} aria-label={`Call Now: ${site.phoneDisplay}`}><Phone size={15} aria-hidden="true" /> Call Now</a></div>
+    <footer><div className="container"><div className="footer-main"><a className="brand" href="#home"><span className="monogram">M</span><span><strong>{site.brand}</strong><small>{site.brandDescriptor}</small></span></a><p>Personal guidance.<br />Extraordinary possibilities.</p><nav aria-label="Footer services">{site.services.map(s => <button key={s.name} onClick={() => enquire(s.name as Service)}>{s.name}</button>)}</nav></div><div className="footer-contact"><button type="button" className="phone-link"  aria-haspopup="dialog" onClick={openCall}><Phone size={15} aria-hidden="true" />{site.phoneDisplay}</button><a href={`mailto:${site.contactEmail}`} target="_blank" rel="noopener noreferrer"><Mail size={15} aria-hidden="true" />{site.contactEmail}</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Mayur UAE Realtor</span><span>Dubai · United Arab Emirates</span><button onClick={privacyOpen}>Privacy & enquiries</button><a href="#home">Back to top ↑</a></div><p className="footer-note">Mortgage terms and eligibility depend on the lender. Property availability and transaction details are confirmed individually. Investment outcomes are not guaranteed.</p></div></footer>
+    <div className="mobile-cta"><span>Speak with Mayur<br /><button type="button" className="phone-link"  aria-haspopup="dialog" onClick={openCall}><strong>{site.phoneDisplay}</strong></button></span><button type="button" className="button"  aria-label={`Call Now: ${site.phoneDisplay}`} aria-haspopup="dialog" onClick={openCall}><Phone size={15} aria-hidden="true" /> Call Now</button></div>
 
     <dialog className="enquiry-dialog" ref={dialog} onCancel={e => {e.preventDefault(); close();}} onClick={e => {if (e.target === e.currentTarget) close();}} onClose={() => setShowContact(false)} aria-labelledby="enquiry-title">
       <div className="dialog-inner"><div className="dialog-top"><span className="eyebrow">A CONVERSATION WITH MAYUR</span><button className="icon-button" aria-label="Close enquiry" onClick={close}><X size={22} /></button></div>
@@ -138,6 +163,18 @@ export default function Page() {
         </form>
       </>}
       </div>
+    </dialog>
+
+    <dialog className="call-dialog" ref={callDialog} onCancel={event => {event.preventDefault(); closeCall();}} onClick={event => {if (event.target === event.currentTarget) closeCall();}} onClose={() => setShowCall(false)} aria-labelledby="call-title" aria-describedby="call-description">
+      <div className="dialog-top"><span className="eyebrow">SPEAK WITH MAYUR</span><button className="icon-button" aria-label="Close call options" onClick={closeCall}><X size={22} /></button></div>
+      <span className="call-icon"><Phone size={27} strokeWidth={1.5} aria-hidden="true" /></span>
+      <h2 id="call-title" ref={callHeading} tabIndex={-1}>Call Mayur</h2>
+      <p id="call-description">Open your phone dialler to call {site.phoneDisplay}.</p>
+      <label className="call-number-label" htmlFor="call-number">Phone number</label>
+      <input id="call-number" className="call-number" ref={phoneInput} readOnly value={site.phoneNumber} onFocus={event => event.currentTarget.select()} />
+      <div className="call-options"><a className="button" href={`tel:${site.phoneNumber}`} target="_blank" rel="noopener noreferrer"><Phone size={16} aria-hidden="true" /> Open phone dialler</a><button className="button button-copy" type="button" onClick={copyPhone}><Copy size={16} aria-hidden="true" /> Copy number</button></div>
+      <p className="call-status" role="status" aria-live="polite">{copyStatus}</p>
+      <p className="call-help">If the dialler does not open, copy the number and paste it into your Phone app.</p>
     </dialog>
     <dialog className="privacy-dialog" ref={privacy} onCancel={privacyClose} onClose={() => setShowPrivacy(false)} aria-labelledby="privacy-title"><div className="dialog-top"><span className="eyebrow">YOUR INFORMATION</span><button className="icon-button" onClick={privacyClose} aria-label="Close privacy details"><X size={22} /></button></div><h2 id="privacy-title">Privacy & enquiries</h2><p>The enquiry form prepares an email with the contact details and property preferences you choose to share. It opens your own email app, addressed to {site.contactEmail}. You must tap Send in that app to send your enquiry.</p><p>Your consent covers responding to this enquiry. It does not subscribe you to a marketing list. No payment information is collected.</p><p>To request a correction or deletion of details you have emailed, contact {site.contactEmail}. Avoid sharing identity documents, bank details or other sensitive information.</p><button className="button" onClick={privacyClose}>Understood <Check size={17} /></button></dialog>
   </>;

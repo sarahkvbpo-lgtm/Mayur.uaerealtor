@@ -15,7 +15,7 @@ Page layout and interactions: `app/page.tsx`. Colours and spacing: `app/globals.
 
 The three-step form validates contact details, asks for enquiry-specific consent, and shows a review. **Open email app** is a native `mailto:` link addressed to **connect2realtor.56@gmail.com**, with the complete enquiry in its subject and body. The visitor must tap **Send** in their email app. The website never claims an email has been sent or automatically sends mail. A copyable subject and message are available if no email app is configured.
 
-Call Now actions in the header, hero, contact section and mobile contact bar use `tel:+971585672791`. The footer displays both the phone number and email address. These details can be changed in `content/site.json`.
+Call Now actions and displayed phone numbers open an accessible on-page call dialog. Its Open phone dialler link uses `tel:+971585672791` with a separate target, so a preview that cannot handle telephone links does not replace the website. Copy number uses the clipboard when available and falls back to selecting the number for manual copying. All phone actions share this flow. The footer displays both the phone number and email address. These details can be changed in `content/site.json`.
 
 New enquiries use the visitor’s email app, with no database submission. The previous D1 table and migration history are retained for historical records; its former submission API has been removed. Historical records can be reviewed through the Site's Settings → Database → enquiries. No public lead-reading endpoint is exposed.
 
@@ -38,3 +38,5 @@ Photos: Unsplash image IDs `photo-1512453979798-5ea266f8880c` (Dubai skyline), `
 ## Verification
 
 Initial validation covered desktop and 390px mobile navigation and enquiries. The updated contact flow passed checks for the correct telephone URI, email recipient and encoded enquiry fields, required contact validation, rental preference transfer, and mobile layout. The native email handoff preserved the page and exposed the copy-details fallback in the browser. Strict TypeScript, production build and whitespace checks pass. No phone call was made and no email was sent during testing.
+
+Call fix validation: the embedded mobile call dialog opens without navigation, presents the exact international number and an external dialler target, and provides a selectable copy fallback. Native Phone app opening is device-dependent and is not simulated in browser QA.
