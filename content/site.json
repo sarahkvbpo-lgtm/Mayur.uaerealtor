@@ -118,5 +118,51 @@
   ],
   "phoneNumber": "+971585672791",
   "phoneDisplay": "+971 58 567 2791",
-  "contactEmail": "connect2realtor.56@gmail.com"
+  "contactEmail": "connect2realtor.56@gmail.com",
+  "logo": "/images/mayur-logo.png",
+  "brandTagline": "Building Trust And Delivering Excellence",
+  "socialLinks": [
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me/971585672791",
+      "handle": "+971 58 567 2791",
+      "symbol": "WA",
+      "action": "Chat directly"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/mayur.uaerealtor",
+      "handle": "@mayur.uaerealtor",
+      "symbol": "IG",
+      "action": "Follow / send a message"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/Mayur.uaerealtor",
+      "handle": "Mayur.uaerealtor",
+      "symbol": "f",
+      "action": "Follow / send a message"
+    },
+    {
+      "name": "Threads",
+      "url": "https://www.threads.com/@mayur.uaerealtor",
+      "handle": "@mayur.uaerealtor",
+      "symbol": "@",
+      "action": "Follow Mayur"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/Mayur_M5",
+      "handle": "@Mayur_M5",
+      "symbol": "X",
+      "action": "Follow Mayur"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com/@Mayur.uaerealtor",
+      "handle": "@Mayur.uaerealtor",
+      "symbol": "▶",
+      "action": "Watch / subscribe"
+    }
+  ]
 }
