@@ -1,0 +1,183 @@
+{
+  "brand": "Mayur",
+  "contactQr": {
+    "image": "/images/mayur-contact-qr.png",
+    "href": "https://p2.me-page.org/fa71a63355d4472b85d5cb74dbd65397",
+    "label": "Scan or tap to connect"
+  },
+  "brandDescriptor": "Civil Engineer turned Property Consultant",
+  "tagline": "Civil engineer turned property consultant",
+  "heroEyebrow": "A MORE PERSONAL APPROACH TO UAE REAL ESTATE",
+  "heroTitle": "Find your place.",
+  "heroEmphasis": "Live your extraordinary.",
+  "heroDescription": "From your first home to your next investment. Thoughtful property guidance, built around you.",
+  "heroImage": "/images/dubai-skyline.jpg",
+  "introTitle": "Your ambitions. Our starting point.",
+  "introText": "A place to call home. A new chapter. A considered investment. Whatever brings you to the UAE, start with a conversation about what matters to you.",
+  "aboutTitle": "An engineer’s eye. A personal approach.",
+  "aboutText": "I’m Mayur Janardan Mondkar, a civil engineer turned property consultant. I bring a practical eye for space, construction and everyday living to the property conversation, helping you ask better questions and make a more considered choice.",
+  "services": [
+    {
+      "name": "Buy",
+      "title": "A home that feels like you.",
+      "text": "Shape a shortlist around your lifestyle, priorities and budget, with support from discovery to the next step.",
+      "action": "Find a home",
+      "icon": "home"
+    },
+    {
+      "name": "Sell",
+      "title": "Make your next move.",
+      "text": "Discuss your property, positioning and sale priorities, then build a clear plan to reach the right buyers.",
+      "action": "Discuss my property",
+      "icon": "key"
+    },
+    {
+      "name": "Rent",
+      "title": "Settle into something special.",
+      "text": "Explore locations and homes that work for your commute, your routine and the way you want to live.",
+      "action": "Find a rental",
+      "icon": "building"
+    },
+    {
+      "name": "Mortgage",
+      "title": "See the bigger picture.",
+      "text": "Start a financing conversation, organise your questions and discuss connecting with appropriate licensed specialists.",
+      "action": "Explore my options",
+      "icon": "landmark"
+    },
+    {
+      "name": "Invest",
+      "title": "Clarity before commitment.",
+      "text": "Compare property types, locations and ownership costs against your objectives and time horizon.",
+      "action": "Plan my investment",
+      "icon": "chart"
+    }
+  ],
+  "areas": [
+    {
+      "name": "Downtown Dubai",
+      "eyebrow": "THE CITY AT YOUR DOORSTEP",
+      "text": "Iconic architecture. Connected city living.",
+      "image": "/images/dubai-skyline.jpg",
+      "alt": "Downtown Dubai skyline with the Burj Khalifa at sunset"
+    },
+    {
+      "name": "Jumeirah coast",
+      "eyebrow": "A DIFFERENT PACE OF LIFE",
+      "text": "Sea air. Open horizons. Coastal living.",
+      "image": "/images/jumeirah-coast.jpg",
+      "alt": "Aerial view of Dubai’s Jumeirah coastline and the Burj Al Arab"
+    }
+  ],
+  "locations": [
+    "Open to suggestions",
+    "Downtown Dubai",
+    "Jumeirah coast",
+    "Dubai Marina",
+    "Palm Jumeirah",
+    "Dubai Hills Estate",
+    "Business Bay",
+    "Abu Dhabi",
+    "Elsewhere in the UAE"
+  ],
+  "propertyTypes": [
+    "Open to suggestions",
+    "Studio Apartment",
+    "1 BR Apartment",
+    "2 BR Apartment",
+    "3 BR Apartment",
+    "Villa",
+    "Townhouse",
+    "Penthouse",
+    "Commercial property"
+  ],
+  "buyBudgets": [
+    "Let’s discuss",
+    "Under AED 1 million",
+    "AED 1–3 million",
+    "AED 3–5 million",
+    "AED 5–10 million",
+    "AED 10 million+"
+  ],
+  "rentBudgets": [
+    "Let’s discuss",
+    "Under AED 100,000 / year",
+    "AED 100,000–200,000 / year",
+    "AED 200,000–350,000 / year",
+    "AED 350,000+ / year"
+  ],
+  "faqs": [
+    {
+      "question": "I’m just starting to explore. Can I still enquire?",
+      "answer": "Of course. Share what you know so far, even if you’re still deciding on a location or budget. The first conversation helps clarify your priorities."
+    },
+    {
+      "question": "Can you help with more than buying a property?",
+      "answer": "Yes. You can enquire about selling, renting, investing or starting a mortgage conversation. Select your goal in the enquiry form so the conversation starts in the right place."
+    },
+    {
+      "question": "Are the images on this website available properties?",
+      "answer": "The photographs introduce locations and a style of living. They are not advertised property listings. Share your requirements to discuss suitable options and confirm availability."
+    },
+    {
+      "question": "How do I send an enquiry?",
+      "answer": "Complete the form and review your details, then choose Open email app. An email addressed to connect2realtor.56@gmail.com is prepared with your contact details and property preferences. Tap Send in your email app to complete your enquiry. You can also call Mayur on +971 58 567 2791."
+    }
+  ],
+  "phoneNumber": "+971585672791",
+  "phoneDisplay": "+971 58 567 2791",
+  "contactEmail": "connect2realtor.56@gmail.com",
+  "logo": "/images/mayur-logo.png",
+  "brandTagline": "Building Trust And Delivering Excellence",
+  "socialLinks": [
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me/971585672791",
+      "handle": "+971 58 567 2791",
+      "action": "Chat directly",
+      "icon": "/social/whatsapp.png"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/mayur.uaerealtor",
+      "handle": "@mayur.uaerealtor",
+      "action": "Follow / send a message",
+      "icon": "/social/instagram.png"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/Mayur.uaerealtor",
+      "handle": "Mayur.uaerealtor",
+      "action": "Follow / send a message",
+      "icon": "/social/facebook.jpg"
+    },
+    {
+      "name": "Threads",
+      "url": "https://www.threads.com/@mayur.uaerealtor",
+      "handle": "@mayur.uaerealtor",
+      "action": "Follow Mayur",
+      "icon": "/social/threads.png"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/Mayur_M5",
+      "handle": "@Mayur_M5",
+      "action": "Follow Mayur",
+      "icon": "/social/x.png"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com/@Mayur.uaerealtor",
+      "handle": "@Mayur.uaerealtor",
+      "action": "Watch / subscribe",
+      "icon": "/social/youtube.png"
+    }
+  ],
+  "advisor": {
+    "name": "Mayur Janardan Mondkar",
+    "profession": "Civil Engineer turned Property Consultant",
+    "specialty": "UAE Luxury Real Estate",
+    "services": "Buy | Sell | Rent | Mortgage | Invest"
+  },
+  "brandSpecialty": "UAE Luxury Real Estate"
+}
