@@ -48,3 +48,7 @@ The supplied original logo is stored at public/images/mayur-logo.png. CSS displa
 Social links in content/site.json were read from the owner-provided page https://p2.me-page.org/fa71a63355d4472b85d5cb74dbd65397 and point to WhatsApp, Instagram, Facebook, Threads, X and YouTube profiles. They open in a separate tab with noopener noreferrer. The Connect navigation item leads to the social contact section. Edit a URL in socialLinks to update a destination.
 
 Brand/social validation: mobile and desktop previews show the supplied mark and tagline without horizontal overflow. Contact Call Now measures 124 × 46px on the 390px preview and 132 × 46px on desktop; its call dialog still opens. All six social URLs match anchors on the supplied profile page and open separately. The uploaded logo bytes are preserved exactly.
+
+Social marks use unmodified first-party image assets from Meta’s Brand Resource Center, X’s official logo download, and YouTube’s official brand page. Sources are recorded in public/social/SOURCES.md. The shared header/footer identity displays Civil Engineer turned Property Consultant and UAE Luxury Real Estate on separate lines. Social destinations and contact actions remain unchanged.
+
+Social-logo and identity verification: all six original logo images load in the mobile preview, all profile URLs are unchanged, and the header/footer display the requested professional title and UAE Luxury Real Estate line. No horizontal overflow was observed at 390px.

@@ -1,6 +1,6 @@
 {
   "brand": "Mayur",
-  "brandDescriptor": "UAE REALTOR",
+  "brandDescriptor": "Civil Engineer turned Property Consultant",
   "tagline": "Civil engineer turned property consultant",
   "heroEyebrow": "A MORE PERSONAL APPROACH TO UAE REAL ESTATE",
   "heroTitle": "Find your place.",
@@ -126,43 +126,43 @@
       "name": "WhatsApp",
       "url": "https://wa.me/971585672791",
       "handle": "+971 58 567 2791",
-      "symbol": "WA",
-      "action": "Chat directly"
+      "action": "Chat directly",
+      "icon": "/social/whatsapp.png"
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/mayur.uaerealtor",
       "handle": "@mayur.uaerealtor",
-      "symbol": "IG",
-      "action": "Follow / send a message"
+      "action": "Follow / send a message",
+      "icon": "/social/instagram.png"
     },
     {
       "name": "Facebook",
       "url": "https://www.facebook.com/Mayur.uaerealtor",
       "handle": "Mayur.uaerealtor",
-      "symbol": "f",
-      "action": "Follow / send a message"
+      "action": "Follow / send a message",
+      "icon": "/social/facebook.jpg"
     },
     {
       "name": "Threads",
       "url": "https://www.threads.com/@mayur.uaerealtor",
       "handle": "@mayur.uaerealtor",
-      "symbol": "@",
-      "action": "Follow Mayur"
+      "action": "Follow Mayur",
+      "icon": "/social/threads.png"
     },
     {
       "name": "X",
       "url": "https://x.com/Mayur_M5",
       "handle": "@Mayur_M5",
-      "symbol": "X",
-      "action": "Follow Mayur"
+      "action": "Follow Mayur",
+      "icon": "/social/x.png"
     },
     {
       "name": "YouTube",
       "url": "https://youtube.com/@Mayur.uaerealtor",
       "handle": "@Mayur.uaerealtor",
-      "symbol": "▶",
-      "action": "Watch / subscribe"
+      "action": "Watch / subscribe",
+      "icon": "/social/youtube.png"
     }
   ],
   "advisor": {
@@ -170,5 +170,6 @@
     "profession": "Civil Engineer turned Property Consultant",
     "specialty": "UAE Luxury Real Estate",
     "services": "Buy | Sell | Rent | Mortgage | Invest"
-  }
+  },
+  "brandSpecialty": "UAE Luxury Real Estate"
 }
