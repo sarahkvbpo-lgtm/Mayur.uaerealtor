@@ -1,5 +1,10 @@
 {
   "brand": "Mayur",
+  "contactQr": {
+    "image": "/images/mayur-contact-qr.png",
+    "href": "https://p2.me-page.org/fa71a63355d4472b85d5cb74dbd65397",
+    "label": "Scan or tap to connect"
+  },
   "brandDescriptor": "Civil Engineer turned Property Consultant",
   "tagline": "Civil engineer turned property consultant",
   "heroEyebrow": "A MORE PERSONAL APPROACH TO UAE REAL ESTATE",

@@ -34,3 +34,15 @@
 
 /* Keep the source logo’s printed caption outside the displayed mark. */
 .brand-mark img{top:-80.5556%}
+
+/* Keep the original contact QR clear and proportionate in the footer. */
+.footer-main{display:grid;grid-template-columns:minmax(290px,1fr) minmax(240px,1fr) 164px;column-gap:40px;row-gap:16px;align-items:center}
+.footer-main>.brand{grid-column:1;grid-row:1/3}
+.footer-main>p{grid-column:2;grid-row:1;margin-left:0;align-self:end}
+.footer-main nav{grid-column:2;grid-row:2;margin-left:0;flex-wrap:wrap;gap:8px 22px;align-self:start}
+.footer-qr{grid-column:3;grid-row:1/3;display:flex;flex-direction:column;align-items:center;gap:8px;width:164px;max-width:100%;color:var(--green)}
+.footer-qr img{display:block;width:164px;height:auto;aspect-ratio:1;background:#fff}
+.footer-qr span{font-size:10px;line-height:1.6;text-align:center}
+.footer-qr:hover span{text-decoration:underline}
+@media(max-width:1000px){.footer-main{grid-template-columns:minmax(0,1fr) 164px;gap:18px 30px}.footer-main>.brand{grid-column:1;grid-row:1}.footer-main>p{grid-column:1;grid-row:2;align-self:auto}.footer-main nav{grid-column:1;grid-row:3;align-self:auto}.footer-qr{grid-column:2;grid-row:1/4}}
+@media(max-width:600px){.footer-main{grid-template-columns:minmax(0,1fr);gap:20px}.footer-main>.brand,.footer-main>p,.footer-main nav,.footer-qr{grid-column:1;grid-row:auto}.footer-main nav{gap:8px 20px}.footer-qr{justify-self:center;margin-top:8px}}
